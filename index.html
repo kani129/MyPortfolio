@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kanako Saito Web Design & Illustration Portfolio"
+    />
+    <title>Kanako Saito | Web Design & Illustration Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;600&family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="#top">
+          <span class="logo__name">Kanako Saito</span>
+          <span class="logo__sub"
+            >WEB DESIGN &amp; ILLUSTRATION<br />PORTFOLIO</span
+          >
+        </a>
+
+        <nav class="global-nav" aria-label="メインナビゲーション">
+          <a href="#top">Home</a>
+          <a href="#about">About</a>
+          <a href="#works">Works</a>
+          <a href="#story">My Story</a>
+          <a href="#contact">Contact</a>
+          <a class="global-nav__paw" href="#contact" aria-label="お問い合わせ"
+            >🐾</a
+          >
+        </nav>
+
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero__mountain"></div>
+        <div class="hero__copy">
+          <p class="hero__eyebrow">WEB DESIGN &amp; ILLUSTRATION</p>
+          <h1>５か月間<br />ありがとう<br />の形。</h1>
+        </div>
+
+        <div class="hero__sign">My<br />Portfolio <span>→</span></div>
+
+        <!-- 4匹のじゃがいもダックスをここに配置 -->
+        <div class="dog-walk dog-walk--hero" aria-hidden="true">
+          <div class="dog-walk__dog dog-walk__dog--01">
+            <img src="images/dog-potato-01.webp" alt="ダックス１" />
+          </div>
+
+          <div class="dog-walk__dog dog-walk__dog--02">
+            <img src="images/dog-potato-02.webp" alt="ダックス２" />
+          </div>
+
+          <div class="dog-walk__dog dog-walk__dog--03">
+            <img src="images/dog-potato-03.webp" alt="ダックス３" />
+          </div>
+
+          <div class="dog-walk__dog dog-walk__dog--04">
+            <img src="images/dog-potato-04.webp" alt="ダックス４" />
+          </div>
+        </div>
+
+        <a class="scroll-down" href="#about">
+          <span>Scroll</span>
+          <span class="scroll-down__arrow">↓</span>
+        </a>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about section" id="about">
+        <div
+          class="leaf-decoration leaf-decoration--about"
+          aria-hidden="true"
+        ></div>
+
+        <div class="section-inner about__inner">
+          <div class="section-heading">
+            <p class="section-heading__en">About</p>
+            <h2>私について</h2>
+          </div>
+
+          <div class="about__grid">
+            <div class="about__text">
+              <p class="about__lead">はじめまして。齋藤 華奈子です。</p>
+              <p>
+                Webデザインの学校に５か月通い、<br />
+                HTML / CSS・Illustrator・Photoshopを学びました。
+              </p>
+              <p>
+                これまでの学びを活かしながら、<br />
+                わかりやすいデザインを<br />
+                つくっていきたいと考えています。
+              </p>
+            </div>
+
+            <div class="about__illustration">
+              <img
+                src="./images/potato-syun.webp"
+                alt="じゃがいもダックスのじゃがまる"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKS -->
+      <section class="works section" id="works">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div class="section-heading">
+              <p class="section-heading__en">Works</p>
+              <h2>制作した作品</h2>
+            </div>
+            <p class="section-note">
+              画像をクリックすると、詳しい内容をご覧いただけます。 🐾
+            </p>
+          </div>
+
+          <div class="works__grid">
+            <a class="work-card" href="https://kani129.github.io/3/">
+              <div class="work-card__image">
+                <img src="images/work-web.webp" alt="架空の鍼灸院サイト" />
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__category">WEB SITE</span>
+                <h3>架空の鍼灸院サイト</h3>
+                <p>Webサイト 1点</p>
+              </div>
+            </a>
+
+            <a class="work-card" href="./images/flyer.webp">
+              <div class="work-card__image">
+                <img
+                  src="./images/flyer-top.webp"
+                  alt="架空の鍼灸院フライヤー"
+                />
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__category">FLYER</span>
+                <h3>架空の鍼灸院のフライヤー</h3>
+                <p>A4 表・裏</p>
+              </div>
+            </a>
+
+            <a class="work-card" href="./images/banner.webp">
+              <div class="work-card__image">
+                <img src="./images/banner-top.webp" alt="求人広告バナー" />
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__category">BANNER</span>
+                <h3>求人広告バナー</h3>
+                <p>バナー 2点</p>
+              </div>
+            </a>
+
+            <a class="work-card" href="./images/potato.webp">
+              <div class="work-card__image">
+                <img src="./images/potato.webp" alt="その他のチラシ" />
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__category">OTHER</span>
+                <h3>その他</h3>
+                <p>チラシ 1点</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- 作品詳細用アンカー -->
+          <div class="work-details">
+            <article class="work-detail">
+              <div>
+                <span>WEB SITE</span>
+                <h3>架空の鍼灸院サイト</h3>
+              </div>
+              <p>
+                HTML /
+                CSSを使い、やさしく落ち着いた雰囲気の鍼灸院サイトを制作しました。
+              </p>
+            </article>
+
+            <article class="work-detail">
+              <div>
+                <span>FLYER</span>
+                <h3>架空の鍼灸院のフライヤー</h3>
+              </div>
+              <p>Illustratorを使い、A4サイズの表面・裏面を制作しました。</p>
+            </article>
+
+            <article id="work-banner" class="work-detail">
+              <div>
+                <span>BANNER</span>
+                <h3>求人広告バナー</h3>
+              </div>
+              <p>Photoshopを使い、求人広告バナーを2点制作しました。</p>
+            </article>
+
+            <article id="work-other" class="work-detail">
+              <div>
+                <span>OTHER</span>
+                <h3>その他のチラシ</h3>
+              </div>
+              <p>学習の中で制作したチラシ作品を掲載しています。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="story section" id="story">
+        <div class="story__clouds" aria-hidden="true"></div>
+
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-heading__en">5 months of Learning</p>
+            <h2>5か月間の学びと制作の流れ</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline__line"></div>
+
+            <article class="timeline-item">
+              <span class="timeline-item__month">1ヶ月目</span>
+              <strong>HTML / CSS</strong>
+              <div class="timeline-item__icon">〈/〉</div>
+              <p>Webの基礎を学び、<br />コーディングを開始。</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-item__month">2ヶ月目</span>
+              <strong>HTML / CSS</strong>
+              <div class="timeline-item__icon">〈/〉</div>
+              <p>デザインを意識した<br />コーディングを学習。</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-item__month">3ヶ月目</span>
+              <strong>HTML / CSS</strong>
+              <div class="timeline-item__icon">WEB</div>
+              <p>架空の鍼灸院サイトを<br />制作。</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-item__month">4ヶ月目</span>
+              <strong>Illustrator</strong>
+              <div class="timeline-item__icon timeline-item__icon--ai">Ai</div>
+              <p>鍼灸院のフライヤー<br />A4表裏を制作。</p>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-item__month">5ヶ月目</span>
+              <strong>Photoshop</strong>
+              <div class="timeline-item__icon timeline-item__icon--ps">Ps</div>
+              <p>求人広告バナー2点、<br />その他チラシを制作。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact section" id="contact">
+        <div class="contact__leaves" aria-hidden="true"></div>
+
+        <div class="section-inner contact__inner">
+          <div class="contact__copy">
+            <div class="section-heading">
+              <p class="section-heading__en">Contact</p>
+              <h2>お問い合わせ</h2>
+            </div>
+
+            <p>
+              最後までご覧いただき、ありがとうございます。<br />
+              よろしければ、お気軽にご連絡ください。
+            </p>
+
+            <!-- 実際のメールアドレスに変更してください -->
+            <a class="mail-button" href="mailto:your-address@example.com">
+              <span aria-hidden="true">✉</span>
+              your-address@example.com
+            </a>
+          </div>
+
+          <div class="contact__dog">
+            <img
+              src="./images/potato-syun.webp"
+              alt="じゃがいもとダックスフンド"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Kanako Saito. All Rights Reserved.</p>
+      <nav aria-label="フッターナビゲーション">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#works">Works</a>
+        <a href="#story">My Story</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>
