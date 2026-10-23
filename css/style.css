@@ -1088,3 +1088,161 @@ button {
     transition: none;
   }
 }
+
+
+/* =========================
+   Loading Screen
+========================= */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f8f4e9;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
+}
+
+.loading-screen.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-content {
+  width: min(90%, 680px);
+  text-align: center;
+  color: #6a4b32;
+}
+
+.loading-name {
+  margin: 0 0 10px;
+  font-family: serif;
+  font-size: clamp(16px, 2.5vw, 24px);
+  letter-spacing: 0.12em;
+}
+
+.loading-title {
+  margin: 0;
+  font-family: serif;
+  font-size: clamp(25px, 5vw, 42px);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.loading-walk {
+  position: relative;
+  width: 100%;
+  height: clamp(170px, 32vw, 280px);
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.loading-dog {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(180px, 35vw, 280px);
+  height: auto;
+  object-fit: contain;
+  animation: dog-delivery 4s linear infinite;
+  will-change: transform;
+}
+
+/* ダックスが左から右へ歩く */
+@keyframes dog-delivery {
+  from {
+    transform: translateX(-110%);
+  }
+
+  to {
+    transform: translateX(360%);
+  }
+}
+
+.loading-message {
+  margin: 12px 0 16px;
+  font-size: clamp(15px, 2.5vw, 20px);
+  letter-spacing: 0.12em;
+}
+
+.loading-progress {
+  width: min(75%, 380px);
+  height: 6px;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  background: #e4ddce;
+  border-radius: 999px;
+}
+
+.loading-progress span {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: #879779;
+  border-radius: inherit;
+  animation: progress-loading 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes progress-loading {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(185%);
+  }
+}
+
+.loading-destination {
+  margin: 0;
+  font-size: clamp(16px, 2.5vw, 21px);
+  letter-spacing: 0.15em;
+}
+
+.loading-english {
+  margin-top: 16px;
+  color: #8c806d;
+  font-family: serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+  .loading-content {
+    width: 94%;
+  }
+
+  .loading-walk {
+    height: 190px;
+  }
+
+  .loading-dog {
+    width: 190px;
+  }
+
+  .loading-message {
+    letter-spacing: 0.06em;
+  }
+}
+
+/* 動きを減らす設定を使っている場合 */
+@media (prefers-reduced-motion: reduce) {
+  .loading-dog {
+    animation: none;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .loading-progress span {
+    animation: none;
+    width: 65%;
+  }
+}
+

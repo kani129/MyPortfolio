@@ -302,3 +302,33 @@
     });
   }
 })();
+
+/* Loading Screen */
+(() => {
+  const loadingScreen = document.getElementById("loading-screen");
+
+  if (!loadingScreen) return;
+
+  const minimumDisplayTime = 1000;
+  const startTime = Date.now();
+
+  function hideLoadingScreen() {
+    const elapsed = Date.now() - startTime;
+    const remainingTime = Math.max(0, minimumDisplayTime - elapsed);
+
+    setTimeout(() => {
+      loadingScreen.classList.add("is-hidden");
+
+      // フェードアウト後に画面を操作可能にする
+      setTimeout(() => {
+        loadingScreen.remove();
+      }, 800);
+    }, remainingTime);
+  }
+
+  if (document.readyState === "complete") {
+    hideLoadingScreen();
+  } else {
+    window.addEventListener("load", hideLoadingScreen, { once: true });
+  }
+})();
