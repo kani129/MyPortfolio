@@ -1089,7 +1089,6 @@ button {
   }
 }
 
-
 /* =========================
    Loading Screen
 ========================= */
@@ -1246,3 +1245,100 @@ button {
   }
 }
 
+/* =========================
+   Paw Friend
+========================= */
+
+.global-nav__paw {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.paw-friend {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  width: min(320px, 85vw);
+  padding: 16px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(35px, 20px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s ease,
+    visibility 0.35s ease;
+}
+
+.paw-friend.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+}
+
+.paw-friend__bubble {
+  position: relative;
+  width: fit-content;
+  max-width: 260px;
+  padding: 18px 30px 16px 20px;
+  border: 1px solid #e3d6c0;
+  border-radius: 18px;
+  background: #fffdf7;
+  color: #6a4b32;
+  box-shadow: 0 5px 20px rgb(75 55 35 / 10%);
+  pointer-events: auto;
+}
+
+.paw-friend__message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+}
+
+.paw-friend__close {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  border: 0;
+  background: transparent;
+  color: #8c806d;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.paw-friend__dog {
+  display: block;
+  width: min(230px, 70vw);
+  height: auto;
+  object-fit: contain;
+  transform-origin: bottom center;
+  animation: paw-dog-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes paw-dog-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paw-friend,
+  .paw-friend__dog {
+    transition: none;
+    animation: none;
+  }
+}

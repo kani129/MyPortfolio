@@ -301,6 +301,57 @@
       });
     });
   }
+
+  /*
+   * ---------------------------------------------------------
+   * 7. ひょっこりダックス
+   * ヘッダーやメニューの足跡を押すと登場します。
+   * ---------------------------------------------------------
+   */
+  const pawFriend = document.querySelector("#paw-friend");
+  const pawTriggers = document.querySelectorAll(".paw-trigger");
+  const pawClose = document.querySelector(".paw-friend__close");
+
+  let pawFriendTimer;
+
+  const hidePawFriend = () => {
+    if (!pawFriend) return;
+
+    pawFriend.classList.remove("is-active");
+    pawFriend.setAttribute("aria-hidden", "true");
+  };
+
+  const showPawFriend = () => {
+    if (!pawFriend) return;
+
+    clearTimeout(pawFriendTimer);
+
+    pawFriend.classList.add("is-active");
+    pawFriend.setAttribute("aria-hidden", "false");
+
+    pawFriendTimer = setTimeout(hidePawFriend, 5000);
+  };
+
+  pawTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      showPawFriend();
+
+      // スマホのメニュー内から呼んだ場合はメニューを閉じる
+      if (menuButton && globalNav) {
+        menuButton.classList.remove("is-open");
+        globalNav.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  if (pawClose) {
+    pawClose.addEventListener("click", () => {
+      clearTimeout(pawFriendTimer);
+      hidePawFriend();
+    });
+  }
 })();
 
 /* Loading Screen */

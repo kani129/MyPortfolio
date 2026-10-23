@@ -62,9 +62,13 @@
           <a href="#works">Works</a>
           <a href="#story">My Story</a>
           <a href="#contact">Contact</a>
-          <a class="global-nav__paw" href="#contact" aria-label="お問い合わせ"
-            >🐾</a
+          <button
+            class="global-nav__paw paw-trigger"
+            type="button"
+            aria-label="ダックスを呼ぶ"
           >
+            🐾
+          </button>
         </nav>
 
         <button class="menu-button" type="button" aria-label="メニューを開く">
@@ -72,6 +76,28 @@
         </button>
       </div>
     </header>
+    
+<!-- ひょっこりダックス -->
+<div class="paw-friend" id="paw-friend" aria-live="polite" aria-hidden="true">
+  <div class="paw-friend__bubble">
+    <button
+      class="paw-friend__close"
+      type="button"
+      aria-label="閉じる"
+    >×</button>
+    <p class="paw-friend__message">
+      こんにちは！<br>
+      ポートフォリオへようこそ♪
+    </p>
+  </div>
+
+  <img
+    class="paw-friend__dog"
+    src="./images/road-potatodog.webp"
+    alt=""
+  >
+</div>
+
 
     <main>
       <!-- HERO -->
