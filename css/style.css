@@ -1254,6 +1254,8 @@ button {
   background: transparent;
   font: inherit;
   cursor: pointer;
+  /* 肉球ボタンをほかのメニューと同様左揃えにする*/
+  text-align: left;
 }
 
 .paw-friend {
