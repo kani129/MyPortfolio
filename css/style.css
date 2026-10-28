@@ -1344,3 +1344,83 @@ button {
     animation: none;
   }
 }
+
+/* ページトップへ戻る肉球ボタン */
+.page-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+
+  background-color: #fffaf2;
+  color: #725744;
+  border: 1px solid #e5d4bd;
+  box-shadow: 0 4px 12px rgb(70 50 30 / 15%);
+
+  text-decoration: none;
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* 肉球アイコン */
+.page-top__icon {
+  font-size: 27px;
+  line-height: 1;
+}
+
+/* TOPの文字 */
+.page-top__text {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+/* マウスを乗せたとき */
+.page-top:hover {
+  transform: translateY(-5px);
+  background-color: #f2e3d0;
+  box-shadow: 0 8px 18px rgb(70 50 30 / 20%);
+}
+
+/* キーボード操作時 */
+.page-top:focus-visible {
+  outline: 2px solid #725744;
+  outline-offset: 4px;
+}
+
+/* スマートフォン */
+@media (max-width: 760px) {
+  .page-top {
+    width: 52px;
+    height: 52px;
+    right: 14px;
+    bottom: 16px;
+  }
+
+  .page-top__icon {
+    font-size: 23px;
+  }
+
+  .page-top__text {
+    font-size: 8px;
+  }
+}
+
+/* 動きを減らす設定への配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .page-top {
+    transition: none;
+  }
+}
