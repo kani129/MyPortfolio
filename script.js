@@ -305,39 +305,73 @@
   /*
    * ---------------------------------------------------------
    * 7. ひょっこりダックス
-   * ヘッダーやメニューの足跡を押すと登場します。
+   * 足跡を押すたびに写真とメッセージを切り替えます。
    * ---------------------------------------------------------
    */
+
   const pawFriend = document.querySelector("#paw-friend");
   const pawTriggers = document.querySelectorAll(".paw-trigger");
   const pawClose = document.querySelector(".paw-friend__close");
 
-  let pawFriendTimer;
+  const pawMessage = document.querySelector(".paw-friend__message");
+  const pawDog = document.querySelector(".paw-friend__dog");
 
+  let pawFriendTimer;
+  let pawIndex = -1;
+
+  // 表示する写真とメッセージ
+  const pawContents = [
+    {
+      message: "ポートフォリオを\n見に来てくれて\nありがとう♪",
+      image: "./images/bongoparl-message-01.webp",
+      alt: "ありがとうのメッセージを届けるダックス",
+    },
+    {
+      message: "５か月間の\n学びを忘れずに\n頑張ります!",
+      image: "./images/bongoparl-message-02.webp",
+      alt: "また見に来てねと伝えるダックス",
+    },
+  ];
+
+  // ダックスを隠す
   const hidePawFriend = () => {
     if (!pawFriend) return;
 
+    clearTimeout(pawFriendTimer);
     pawFriend.classList.remove("is-active");
     pawFriend.setAttribute("aria-hidden", "true");
   };
 
+  // ダックスを表示する
   const showPawFriend = () => {
-    if (!pawFriend) return;
+    if (!pawFriend || !pawMessage || !pawDog) return;
 
     clearTimeout(pawFriendTimer);
+
+    // 次の写真・メッセージへ切り替え
+    pawIndex = (pawIndex + 1) % pawContents.length;
+
+    const current = pawContents[pawIndex];
+
+    pawMessage.textContent = current.message;
+    pawDog.src = current.image;
+    pawDog.alt = current.alt;
 
     pawFriend.classList.add("is-active");
     pawFriend.setAttribute("aria-hidden", "false");
 
+    // 5秒後に自動で隠す
     pawFriendTimer = setTimeout(hidePawFriend, 5000);
   };
 
+  // 足跡ボタンのクリック処理
   pawTriggers.forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
+
       showPawFriend();
 
-      // スマホのメニュー内から呼んだ場合はメニューを閉じる
+      // スマホメニューを閉じる
       if (menuButton && globalNav) {
         menuButton.classList.remove("is-open");
         globalNav.classList.remove("is-open");
@@ -346,11 +380,9 @@
     });
   });
 
+  // 閉じるボタン
   if (pawClose) {
-    pawClose.addEventListener("click", () => {
-      clearTimeout(pawFriendTimer);
-      hidePawFriend();
-    });
+    pawClose.addEventListener("click", hidePawFriend);
   }
 })();
 
